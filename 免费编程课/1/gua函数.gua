@@ -1,0 +1,48 @@
+var step = 50
+penup()
+forward(step)
+pendown()
+forward(step)
+setHeading(0)
+right(30)
+forward(step)
+goto(100, 200)
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+
+
+const square = function (x, y, length) {
+    jump(x, y)
+    // 设置朝向, 确保箭头朝向 右边
+    // 当然如果是用 goto 来画的话, 就不用关心朝向
+    setHeading(0)
+    // 循环画正方形
+    // 当然, 你可以用 goto 来画
+    // 只需要计算一下四个顶点的坐标 (这很简单)
+    var i = 0
+    while (i < 4) {
+        forward(length)
+        right(90)
+        i = i + 1
+    }
+}
+
+// square(0, 0, 50)
+
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+
+// rect(0,0,100,50)

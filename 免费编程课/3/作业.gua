@@ -1,0 +1,97 @@
+var a = [1,2,3]
+var n = 5
+const sum = function(array) {
+    // 先设置一个变量 s 用来存数组的和
+    var s = 0 //和
+    var i = 0 //循环次数控制
+    while (i < array.length()) {
+        var n = array[i]
+        s = s + n
+        i = i + 1
+    }
+    return s
+}
+log('sum a: ',sum(a))
+const product = function(array) {
+    var s = 1
+    var i = 0
+    while(i < array.length()){
+        var n = array[i]
+        s = s * n
+        i = i + 1
+    }
+    return s
+}
+log('product a: ',product(a))
+
+const abs = function(n) {
+    if(n < 0){
+        n = -n
+    }
+    return n
+}
+log('abs n: ',abs(n))
+
+const average = function(array) {
+    var a = sum(array)
+    var b = array.length()
+    return a/b
+}
+log('average a: ',average(a))
+
+const min  = function(array) {
+    var s = array[0]
+    var i = 0
+    while(i < array.length()){
+        var n = array[i]
+        if(n < s){
+            s = n
+        }
+        i = i + 1
+    }
+    return s
+}
+log('min  a: ',min (a))
+
+const sum1 = function(n) {
+    var s = 0
+    var i = 1
+    while(i <= n){
+        if(i%2 != 0){
+            s = s + i
+        }else{
+            s = s - i
+        }
+        i = i + 1
+    }
+    return s
+}
+log('sum1 n: ',sum1(n))
+
+const sum2 = function(n) {
+    var s = 1
+    var i = 2
+    while(i <= n){
+        if(i%2 == 0){
+            s = s + i
+        }else{
+            s = s - i
+        }
+        // log('i ',i)
+        // log('s ',s)
+        i = i + 1
+    }
+    return s
+}
+log('sum2 n: ',sum2(n))
+
+const fac  = function(n) {
+    var s = 1
+    var i = 1
+    while(i <= n){
+        s = s * i
+        i = i + 1
+    }
+    return s
+}
+log('fac  n: ',fac(n))

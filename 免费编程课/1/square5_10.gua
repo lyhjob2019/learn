@@ -1,0 +1,54 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const square = function (x, y, length) {
+    jump(x, y)
+    // 设置朝向, 确保箭头朝向 右边
+    // 当然如果是用 goto 来画的话, 就不用关心朝向
+    setHeading(0)
+    // 循环画正方形
+    // 当然, 你可以用 goto 来画
+    // 只需要计算一下四个顶点的坐标 (这很简单)
+    var i = 0
+    while (i < 4) {
+        forward(length)
+        right(90)
+        i = i + 1
+    }
+}
+// 这是我的版本
+// const square5_10 = function () {
+//     var i = 0
+//     var x = 0
+//     var y = 0
+//     var length = 30
+//     var space = 10
+//     while (i < n) {
+//         square(x, y, length)
+//         forward(length) //这是多余的，因为x,y已经重设了
+//         penup()
+//         forward(space)
+//         pendown()
+//         x = x + length + space
+//         i = i + 1
+//     }
+// }
+// 这是老师版本
+const square5_10 = function () {
+    var n = 5
+    var length = 30
+    var space = 10
+    var i = 0
+    while (i < n) {
+        var x = i * (length + space)
+        var y = 0
+        square(x, y, length)
+        i = i + 1
+    }
+}
+// 总结
+// 1、变量不要重复用，用算法解决，找到一个算法
+// 2、行为复杂了，难搞
+square5_10()

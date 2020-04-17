@@ -1,0 +1,48 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+const center_rect = function (x, y, w, h) {
+    var x1 = x - w/2
+    var y1 = y - h/2
+    rect(x1,y1,w,h)
+}
+const gambia = function (x = -100 , y = -50) {
+    var w = 200
+    var h = 150
+
+    var x1 = x + w /2
+
+    var y1 = y + h/6
+    var y2 = y + h/3+ h/48
+    var y3 = y + h/2
+    var y4 = y +h*2/3 - h/48
+    var y5 = y +h - h/6
+
+    var h1 = h/3
+    var h2 = h/24
+    var h3 = h/3
+    var h4 = h/24
+    var h5 = h/3
+
+    center_rect(x1,y1,w,h1)
+    center_rect(x1,y2,w,h2)
+    center_rect(x1,y3,w,h3)
+    center_rect(x1,y4,w,h4)
+    center_rect(x1,y5,w,h5)
+}
+
+gambia()

@@ -1,0 +1,43 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const square = function (x, y, length) {
+    jump(x, y)
+    // 设置朝向, 确保箭头朝向 右边
+    // 当然如果是用 goto 来画的话, 就不用关心朝向
+    setHeading(0)
+    // 循环画正方形
+    // 当然, 你可以用 goto 来画
+    // 只需要计算一下四个顶点的坐标 (这很简单)
+    var i = 0
+    while (i < 4) {
+        forward(length)
+        right(90)
+        i = i + 1
+    }
+}
+// my version
+// const square_line = function (x, y, n, space, len) {
+//     var i = 0
+//     while (i < n) {
+//         square(x, y, len)
+//         x = x + len + space
+//         i = i + 1
+//     }
+// }
+// the version
+const square_line = function (x, y, n, space, len) {
+    // var n = 5
+    var length = len
+    // var space = 10
+    var i = 0
+    while (i < n) {
+        var x1 = x + i * (length + space)
+        var y1 = y
+        square(x1, y1, length)
+        i = i + 1
+    }
+}
+square_line(0, 0, 3, 20, 30)

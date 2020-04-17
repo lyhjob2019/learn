@@ -1,0 +1,62 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const sin = function(degree) {
+    // 这里的 sin 函数接受弧度作为参数
+    // 我们这个函数接受角度, 下面是弧度转角度的公式
+    var radians = degree * math.pi / 180
+    return math.sin(radians)
+}
+
+const cos = function(degree) {
+    var radians = degree * math.pi / 180
+    return math.cos(radians)
+}
+const penta = function (x, y, length) {
+    jump(x, y)
+    var degree = 144
+    var i = 0
+    var n = 5
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+const penta1 = function (x, y, r) {
+    var du = 18
+    var x1 = x - cos(du) * r
+    var y1 = y - sin(du) * r
+    var length = cos(du) * r * 2
+    penta(x1, y1, length)
+}
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+const china = function () {
+    var w = 200
+    var h = 150
+    var i = 0
+    var n = 5
+    var r = 10
+    var x = 0
+    var y = 0
+    rect(x,y,w,h)
+    penta1(50,100, r)
+    penta1(20,20, r)
+    penta1(30,30, r)
+    penta1(40,40, r)
+    penta1(20,50, r)
+}
+china()

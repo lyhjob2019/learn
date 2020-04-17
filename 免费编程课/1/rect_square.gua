@@ -1,0 +1,36 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+
+const rect_line = function (x, y, w, h, n, space) {
+    var i = 0
+    while (i < n) {
+        var x1 = x + i * (w + space)
+        var y1 = y
+        rect(x1, y1, w, h)
+        i = i + 1
+    }
+}
+const rect_square = function (x, y, space, w, h, n, m) {
+    var i = 0
+    while (i < m) {
+        var y1 = y + i * (w + space)
+        rect_line(x, y1, w, h, n, space)
+        i = i + 1
+    }
+}
+rect_square(0, 0, 20, 20, 10, 2, 2)

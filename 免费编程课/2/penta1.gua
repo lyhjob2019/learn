@@ -1,0 +1,66 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const polygon = function (x, y, n, length) {
+    jump(x, y)
+    var 内角 = (n - 2) * 180 / n
+    var degree = 180 - 内角
+    var i = 0
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+// polygon(0, 0, 36, 20)
+
+const circle = function (x, y, r) {
+    jump(x, y)
+    var n  = 36
+    var angle = (90 + (360 / n) / 2)
+    var length = (2 * math.pi * r) / n
+    var 内角 = (n - 2) * 180 / n
+    var degree = 180 - 内角
+    right(-angle)
+    forward(r)
+    setHeading(0)
+    var i = 0
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+const sin = function(degree) {
+    // 这里的 sin 函数接受弧度作为参数
+    // 我们这个函数接受角度, 下面是弧度转角度的公式
+    var radians = degree * math.pi / 180
+    return math.sin(radians)
+}
+
+const cos = function(degree) {
+    var radians = degree * math.pi / 180
+    return math.cos(radians)
+}
+const penta = function (x, y, length) {
+    jump(x, y)
+    var degree = 144
+    var i = 0
+    var n = 5
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+const penta1 = function (x, y, r) {
+    var du = 18
+    var x1 = x - cos(du) * r
+    var y1 = y - sin(du) * r
+    var length = cos(du) * r * 2
+    penta(x1, y1, length)
+    // circle(x, y, r)
+}
+penta1(0, 0, 100)

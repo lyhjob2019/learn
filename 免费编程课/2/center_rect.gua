@@ -1,0 +1,23 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+const center_rect = function (x, y, w, h) {
+    var x1 = x - w/2
+    var y1 = y - h/2
+    rect(x1,y1,w,h)
+}
+center_rect(0,0,100,50)

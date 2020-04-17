@@ -1,0 +1,43 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+const center_rect = function (x, y, w, h) {
+    var x1 = x - w/2
+    var y1 = y - h/2
+    rect(x1,y1,w,h)
+}
+const france = function (x , y) {
+    var w = 200
+    var h = 150
+    var w1 = w/3
+    var x1 = x
+    var x2 = x + w1
+    var x3 = x + w1 + w1
+
+    rect(x1,y,w1,h)
+    rect(x2,y,w1,h)
+    rect(x3,y,w1,h)
+}
+const france1 = function (x , y) {
+    var w = 200
+    var h = 150
+    var w1 = w/3
+
+    center_rect(x,y,w,h)
+    center_rect(x,y,w1,h)
+}
+france1(0,0)

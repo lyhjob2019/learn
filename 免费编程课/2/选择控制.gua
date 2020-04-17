@@ -1,0 +1,56 @@
+// 选择控制
+//
+// if 可以根据情况选择性执行某些语句
+// 例如下方代码
+//
+const demoIf = function() {
+    // 定义一个变量 grade 代表年级
+    var grade = 3
+    // 如果 grade 小于 7
+    if (grade < 7) {
+        // 这句 log 只在 grade 小于 7 这个条件满足的情况下会被执行
+        log('小学生')
+    }
+
+    // 选择控制有多种不同的用法
+    // 只有 if
+    if (1 > 2) {
+        log('条件成立')
+    }
+
+    // if 带 else
+    // if else 必定会执行一个语句
+    if (1 > 2) {
+        log('条件成立')
+    } else {
+        log('条件不成立')
+    }
+
+    // 多个 if else
+    var grade1 = 8
+    if (grade1 < 7) {
+        log('小学生')
+    } else if (grade1 < 10) {
+        log('初中生')
+    } else {
+        log('高中生')
+    }
+
+    // 例子
+    // 求绝对值
+    var n1 = -1
+    if (n1 < 0) {
+        n1 = -n1
+    }
+
+    // 判断奇偶
+    // % 是求模运算符(取余数)
+    var n2 = 1
+    if (n2 % 2 == 0 ) {
+        log('偶数')
+    } else {
+        log('奇数')
+    }
+}
+
+demoIf()

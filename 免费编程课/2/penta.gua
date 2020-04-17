@@ -1,0 +1,19 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const penta = function (x, y, length) {
+    jump(x, y)
+    setHeading(0)
+    var degree = 144
+    var i = 0
+    var n = 5
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+penta(0, 0, 100)
+penta(-100, 0, 100)

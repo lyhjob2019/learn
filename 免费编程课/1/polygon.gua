@@ -1,0 +1,17 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const polygon = function (x, y, n, length) {
+    jump(x, y)
+    var 内角 = (n - 2) * 180 / n
+    var degree = 180 - 内角
+    var i = 0
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+polygon(0, 0, 5, 20)

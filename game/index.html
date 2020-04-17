@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game 1</title>
+  </head>
+  <style>
+    #id-canvas {
+      border: 1px solid gray;
+    }
+  </style>
+  <!-- gua game相关文件 -->
+  <script src="guagame/utils.js" charset="utf-8"></script>
+  <script src="guagame/guagame.js" charset="utf-8"></script>
+  <script src="guagame/gua_sence.js" charset="utf-8"></script>
+  <!-- 场景文件 -->
+  <script src="scene/main/paddle.js" charset="utf-8"></script>
+  <script src="scene/main/ball.js" charset="utf-8"></script>
+  <script src="scene/main/block.js" charset="utf-8"></script>
+  <script src="scene/main/scene.js" charset="utf-8"></script>
+  <!-- 结束和标题文件 -->
+  <script src="scene/end/scene_end.js" charset="utf-8"></script>
+  <script src="scene/title/scene_title.js" charset="utf-8"></script>
+  <script src="scene/win/scene_win.js" charset="utf-8"></script>
+  <!-- 关卡文件 -->
+  <script src="levels.js" charset="utf-8"></script>
+  <body>
+    <canvas id="id-canvas" width="400" height="300"></canvas>
+    <hr>
+    <input type="range" id="id-input-speed"  value="1">
+    <div class="">
+      <textarea id="id-text-log" rows="20" cols="50"></textarea>
+    </div>
+  </body>
+  <script src="main.js" charset="utf-8"></script>
+</html>

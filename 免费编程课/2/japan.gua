@@ -1,0 +1,58 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const rect = function (x, y, w, h) {
+    jump(x, y)
+    setHeading(0)
+    var i = 0
+    while (i < 2) {
+        forward(w)
+        right(90)
+        forward(h)
+        right(90)
+        i = i + 1
+    }
+}
+const center_rect = function (x, y, w, h) {
+    var x1 = x - w/2
+    var y1 = y - h/2
+    rect(x1,y1,w,h)
+}
+
+const circle = function (x, y, r) {
+    jump(x, y)
+    var n  = 36
+    var length = (2 * math.pi * r) / n
+    var 内角 = (n - 2) * 180 / n
+    var degree = 180 - 内角
+    var angle = (90 + (360 / n) / 2)
+    right(-angle)
+    forward(r)
+    setHeading(0)
+    var i = 0
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+// mine
+// const japan = function (x, y) {
+//     jump(x, y)
+//     center_rect(x,y,200,150)
+//     circle(x,y,50)
+// }
+// standard answer
+const japan = function (x, y) {
+    var w = 200
+    var h = 150
+    var x1 = x + w/2
+    var y1 = y + h/2
+    var r = h *0.3
+
+    center_rect(x1,y1,w,h)
+    circle(x1,y1,r)
+}
+japan(0, 0)

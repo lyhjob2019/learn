@@ -1,0 +1,45 @@
+const jump = function (x, y) {
+    penup()
+    goto(x, y)
+    pendown()
+}
+const polygon = function (x, y, n, length) {
+    jump(x, y)
+    var 内角 = (n - 2) * 180 / n
+    var degree = 180 - 内角
+    var i = 0
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+// polygon(0, 0, 36, 20)
+
+const circle = function (x, y, r) {
+    jump(x, y)
+    var n  = 36
+    var angle = (90 + (360 / n) / 2)
+    var length = (2 * math.pi * r) / n
+    var 内角 = (n - 2) * 180 / n
+    var degree = 180 - 内角
+    right(-angle)
+    forward(r)
+    setHeading(0)
+    var i = 0
+    while (i < n) {
+        forward(length)
+        right(degree)
+        i = i + 1
+    }
+}
+circle(0, 0, 100)
+
+//  var angle = (90 + (360 / n) / 2)
+//  right(-angle)
+//
+// l(边长) = (2 * math.pi * r) / n
+//
+//
+//
+// circle(x, y, r)

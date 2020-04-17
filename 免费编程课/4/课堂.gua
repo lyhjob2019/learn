@@ -1,0 +1,59 @@
+var a = [1,2,3]
+var n = 5
+const sum = function(array) {
+    // 先设置一个变量 s 用来存数组的和
+    var s = 0 //和
+    var i = 0 //循环次数控制
+    while (i < array.length()) {
+        var n = array[i]
+        s = s + n
+        i = i + 1
+    }
+    return s
+}
+// log('sum a: ',sum(a))
+
+const product = function(array) {
+    var s = 1
+    var i = 0
+    while(i < array.length()){
+        var n = array[i]
+        s = s * n
+        i = i + 1
+    }
+    return s
+}
+// log('product a: ',product(a))
+
+const ensure = function(condition,message) {
+    if(condition){
+        log('成功')
+    }else{
+        log('测试失败',message)
+    }
+}
+
+const testProduct = function (){
+    var numbers = [1,2,3,4]
+    var value = 24
+    ensure(value == product(numbers),'测试错误1')
+    ensure(1 == product([1]),'测试错误2')
+    ensure(0 == product([1,2,3,0]),'测试错误3')
+}
+// testProduct()
+
+const abs = function(n) {
+    if(n < 0){
+        n = -n
+    }
+    return n
+}
+
+const testAbs = function (){
+    ensure(abs(1) == 1,'测试错误1')
+    ensure(abs(-1) == 1,'测试错误2')
+    ensure(abs(3) == 3,'测试错误3')
+    ensure(abs(-9) == 9,'测试错误4')
+    ensure(abs(12) == 12,'测试错误5')
+}
+// testAbs()

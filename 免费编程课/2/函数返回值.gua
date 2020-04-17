@@ -1,0 +1,90 @@
+// 函数返回值
+//
+// 函数不仅可以合并操作重复性的代码
+// 还可以通过计算得到一个结果, 这个结果我们称之为返回值
+// 返回值的意思是函数调用的结果是一个值, 可以被赋值给变量
+// 具体用法见下方的例子
+
+// 例
+// 定义一个函数 add
+// 接受 a b 两个参数
+const add = function(a, b) {
+    // 用 return 语句来得到一个返回值
+    // 函数执行到 return 语句的时候就结束了
+    return a + b
+}
+
+// 用法
+log('add 函数的返回值', add(1, 2))
+var number = add(2, 3)
+log('add 函数的返回值 number', number)
+
+// 注意看上面的语句, add(2, 3) 被当做一个值赋值给了变量 number
+// 也就是说这个函数调用是一个值, 这个值就是函数的返回值
+
+
+// 例如, 使用函数来求绝对值
+const abs = function(n) {
+    if (n < 0) {
+        n = -n
+    }
+    return n
+}
+
+log('abs ', abs(0))
+log('abs ', abs(-8))
+log('abs ', abs(3))
+
+// 函数执行遇到 return 就结束
+const minus = function(a, b) {
+    log('minus 函数运行开始')
+    return a - b
+    log('这一句是不会被执行的, 因为 return 的时候函数就结束了')
+    // 请注意，return 会终止循环这个概念非常重要
+    // 请一定一定注意这一点
+    // 因为根据经验会有许多人在作业中因为这个问题翻车
+}
+
+// 例子
+// 使用函数检查一个数字是否是奇数(奇数对 2 取余数不等于 0)
+const isOdd = function(n) {
+    // 取余数的操作符是 %
+    if (n % 2 != 0) {
+        return true
+    } else {
+        return false
+    }
+    // 实际情况中，上面的代码会写成下面的形式，直接返回布尔值
+    // return n % 2 != 0
+}
+
+log('isOdd', isOdd(1))
+log('isOdd', isOdd(2))
+log('isOdd', isOdd(3))
+log('isOdd', isOdd(4))
+
+// 练习, 实现 isEven 函数, 偶数返回 true, 奇数返回 false
+
+
+// 返回两个参数中较小的一个
+const min = function(a, b) {
+    if (a < b) {
+        return a
+    } else {
+        return b
+    }
+}
+
+
+log('min ', min(1, 2))
+log('min ', min(3, 2))
+
+// 练习, 实现 max 函数, 接收两个参数, 返回较大的那一个值
+const max = function(a, b) {
+    if (a > b) {
+        return a
+    } else {
+        return b
+    }
+}
+log('max ', max(3, 2))
