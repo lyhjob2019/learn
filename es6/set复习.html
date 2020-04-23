@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+<script type="text/javascript">
+let a = [1,2,3,4,5,3,4,5,3]
+const qc = v => [...new Set(v)]
+console.log(qc(a));
+let s = new Set(a)
+console.log(s);
+console.log(s.has(3));
+console.log(s.delete(3));
+console.log(s.has(3));
+console.log(s.add(3));
+console.log(s.entries());
+s.forEach((v, k) => {
+  console.log(v, k);
+})
+console.log('size ',s.size);
+console.log('forof');
+for (v of s) {
+  console.log(v);
+}
+console.log('forof---end');
+console.log(s.values());
+// set是数据结构，可以让set转换成数组再操作，也可以用set本身的函数去操作
+// 扩展符...内部使用的是for of循环
+// 改变set结构
+// 1
+let set = new Set([1,2,4,3,4])
+set = new Set([...set].map(val => val * 2))
+console.log(set);
+// 2
+let set2 = new Set([1, 2, 3]);
+set2 = new Set(Array.from(set2, val => val * 2));
+console.log(set2);
+// weakSet与set的区别
+// 1、成员只能是对象
+// 2、WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet
+// 对该对象的引用，也就是说，如果其他对象都不再引用该对象，
+// 那么垃圾回收机制会自动回收该对象所占用的内存，
+// 不考虑该对象还存在于 WeakSet 之中。
+// 这是因为垃圾回收机制依赖引用计数，如果一个值的引用次数不为0，
+// 垃圾回收机制就不会释放这块内存。结束使用该值之后，有时会忘记取消引用，
+// 导致内存无法释放，进而可能会引发内存泄漏。
+// 3、WeakSet 没有size属性，没有办法遍历它的成员。
+// 4、因为不考虑回收，所以可以在类里面用这个数据结构
+</script>
+</html>

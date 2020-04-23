@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+<script type="text/javascript">
+// rest是一个数组
+// 数组直接for或者用for in
+let f = (...arg) => {
+  let sum = 0
+  for (v of arg) {
+    sum += v
+  }
+  return sum
+}
+// console.log(f(1,2,3));
+
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+
+// console.log(array1);
+
+// console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+
+let values = [5, 3]
+
+// 正常函数写法
+var result = values.sort(function (a, b) {
+  return a - b;
+})
+
+// console.log(result);
+
+var r = values.sort()
+
+// console.log(r);
+
+function foo() {
+  setTimeout(() => {
+    console.log('id:', this.id);
+  }, 100);
+}
+
+var id = 21;
+
+foo.call({ id: 42 });
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+<script type="text/javascript">
+// 1. map可以用对象作为键
+// 2. object结构提供了字符串——值的对应，map提供值——值对应
+const m = new Map()
+const o = {
+  p:'hello world!!!',
+}
+m.set(o,'content')
+console.log(m.get(o));
+m.has(o) // true
+m.delete(o) // true
+m.has(o) // false
+const map = new Map([
+  ['name', 'zhangka'],
+  ['title', 'Author']
+]);
+// 变量指向的内存地址，保存的只是一个指向实际数据的指针
+// const只能保证这个指针是固定的（即总是指向另一个固定的地址），
+// 至于它指向的数据结构是不是可变的，就完全不能控制了。
+console.log(map);
+const items = [
+  ['name', '张三'],
+  ['title', 'Author']
+];
+const m1 = new Map();
+items.forEach(
+  ([key, value]) => m1.set(key, value)
+);
+console.log(m1);
+console.log(m1.set('hehe','nangao'));
+const qc = v => [...new Set(v)]
+console.log(qc([1,2,4,2,32,2,3]));
+const set = new Set([
+  ['foo', 1],
+  ['bar', 2]
+]);
+console.log(set);
+const m2 = new Map(set);
+console.log(m2);
+// map的关键词是键值
+// 内存地址不一样，比如['5']和 ['5']内存地址不一样，那怎么才能一样呢？
+// let a = ['5'] 调用这个a，就是一样的
+</script>
+</html>

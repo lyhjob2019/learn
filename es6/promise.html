@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+<script type="text/javascript">
+// promise可以把异步操作以同步操作的流程表达出来
+// promise是一个容器，里面保存着某个未来才会结束的事件
+// promise的三个状态pending/fulfilled/rejected
+// promise会返回两个结果:resolved/rejected
+// 这就是promise的链式调用。
+let p = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000, "step1");
+});
+
+p.then(data => {
+  console.log('data1 ', data);
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, "step2");
+  });
+}).then(data => {
+  console.log('data2 ', data);
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, "step3");
+  });
+}).then(data => {
+  console.log('data3 ', data);
+  return new Promise((resolve, reject) => {
+    setTimeout(reject, 1000, "step4");
+  });
+}).catch(reason => {
+  console.log('reason ', reason);
+});
+
+</script>
+</html>
