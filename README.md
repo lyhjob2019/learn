@@ -14,11 +14,7 @@ ____
 
 ## 4月19日
 
-要做简历，下载了模板，在安装依赖的时候发现nodejs还有其他依赖的版本过高，想着能不能随意切换自己的nodejs版本，于是找到了nvm。
-
-**nvm的作用**：进行nodejs版本控制。进行nodejs版本控制的原因是，nodejs经常更新，需要自由切换nodejs版本安装相应的依赖。
-
-[nvm下载地址](https://github.com/coreybutler/nvm-windows/releases)
+做简历，nodejs版本不匹配，用到nvm——nodejs版本管理工具。[下载地址](https://github.com/coreybutler/nvm-windows/releases)
 
 参考资料：
 
