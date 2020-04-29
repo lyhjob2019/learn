@@ -10,14 +10,7 @@ ____
 
 ## 4月28日
 
-抱着复习与练习，查漏补缺的想法，做了个html5小项目，[项目地址](https://github.com/lyhjob2019/noseat)
-
-技术要点：
-
-1. vuex基础应用
-2. vue-router基础应用
-3. axios基础应用以及封装
-4. 用vue-qrcode-reader这个库实现在html5页面进行二维码扫描
+复习vue，做了个h5小项目，[项目地址](https://github.com/lyhjob2019/noseat)
 
 ## 4月19日
 
