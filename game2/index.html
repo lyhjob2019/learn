@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game 1</title>
+  </head>
+  <style>
+    #id-canvas {
+      border: 1px solid gray;
+    }
+  </style>
+  <!-- gua game相关文件 -->
+  <script src="guagame/utils.js" charset="utf-8"></script>
+  <script src="guagame/guagame.js" charset="utf-8"></script>
+  <script src="guagame/gua_sence.js" charset="utf-8"></script>
+  <script src="guagame/gua_image.js" charset="utf-8"></script>
+  <script src="guagame/gua_particle_system.js" charset="utf-8"></script>
+  <!-- 场景文件 -->
+  <script src="scene/main/paddle.js" charset="utf-8"></script>
+  <script src="scene/main/ball.js" charset="utf-8"></script>
+  <script src="scene/main/block.js" charset="utf-8"></script>
+  <script src="scene/main/scene.js" charset="utf-8"></script>
+  <!-- 结束和标题文件 -->
+  <script src="scene/end/scene_end.js" charset="utf-8"></script>
+  <script src="scene/title/scene_title.js" charset="utf-8"></script>
+  <script src="scene/win/scene_win.js" charset="utf-8"></script>
+  <!-- 关卡文件 -->
+  <script src="levels.js" charset="utf-8"></script>
+  <body>
+    <canvas id="id-canvas" width="400" height="600"></canvas>
+    <hr>
+    <input type="range" id="id-input-speed"  value="1">
+    <!-- <div class="">
+      <textarea id="id-text-log" rows="20" cols="50"></textarea>
+    </div> -->
+    <div class="">
+      <label >
+        <input class="gua_auto_slider" type="range"
+          data-value="config.player_speed"
+          min="1"
+          max="10"
+          value="5">
+          玩家速度：<span class="gua_label">5</span>
+      </label>
+      <br>
+      <label >
+        <input class="gua_auto_slider" type="range"
+          data-value="config.bullet_speed"
+          min="1"
+          max="10"
+          value="10">
+          子弹速度：<span class="gua_label">10</span>
+      </label>
+      <br>
+      <label >
+        <input class="gua_auto_slider" type="range"
+        min="1"
+        max="10"
+          data-value="config.fire_cooldown"
+          value="10">
+          子弹冷却时间<span class="gua_label">10</span>
+      </label>
+    </div>
+  </body>
+  <script src="main.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var es = sel => document.querySelectorAll(sel)
+
+    var bindAll = function(sel, eventName, callback) {
+      var l = es(sel)
+      for (var i = 0; i < l.length; i++) {
+        var input = l[i]
+        input.addEventListener(eventName, function(event) {
+          callback(event)
+        })
+      }
+    }
+
+    bindAll('.gua_auto_slider', 'input', function(event) {
+      var target = event.target
+      var bindVar = target.dataset.value
+      var v = target.value
+      eval(bindVar + '=' + v)
+      //
+      var label = target.closest('label').querySelector('.gua_label')
+      label.innerText  = v
+    })
+  </script>
+</html>

@@ -1,25 +1,35 @@
-# 前端学习记录！
+# 编程学习记录！
 
 目录结构，会同步更新
 
-- /class1 模块化编程学习
-- /es6
-- /game1 面向对象学习
+- /class1 免费编程课 模块化编程学习
+- /es6 语法学习
+- /game1 打砖块游戏 面向对象学习
+- /game2 飞行射击游戏 面向对象学习
 
 ____
 
+## 5月4日
+
+飞行射击游戏完成
+
 ## 4月28日
 
-复习vue，做了个h5小项目，[项目地址](https://github.com/lyhjob2019/noseat)
+复习内容：
+
+vue.js、vuex、vue-router、axios封装
+
+补漏的点：
+
+- vue生命周期——计时器在页面中生成，要在distory的时候摧毁，不然会重复创建。
+- keep-alive。可以缓存组件，使计时器一直运行。
+- es6语法补全。
+
+[项目地址](https://github.com/lyhjob2019/noseat)
 
 ## 4月19日
 
-做简历，nodejs版本不匹配，用到nvm——nodejs版本管理工具。[下载地址](https://github.com/coreybutler/nvm-windows/releases)
-
-参考资料：
-
-1. [Windows nvm的安装使用(及排坑)](https://zhuanlan.zhihu.com/p/81801605)
-2. [nvm的下载，安装与使用](https://juejin.im/post/5ce35796e51d454f71439c28)
+做简历
 
 
 
