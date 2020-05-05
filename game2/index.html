@@ -11,15 +11,21 @@
     }
   </style>
   <!-- gua game相关文件 -->
+  <script src="config.js" charset="utf-8"></script>
   <script src="guagame/utils.js" charset="utf-8"></script>
   <script src="guagame/guagame.js" charset="utf-8"></script>
   <script src="guagame/gua_sence.js" charset="utf-8"></script>
   <script src="guagame/gua_image.js" charset="utf-8"></script>
   <script src="guagame/gua_particle_system.js" charset="utf-8"></script>
+  <script src="guagame/gua_label.js" charset="utf-8"></script>
+  <script src="guagame/gua_particle.js" charset="utf-8"></script>
   <!-- 场景文件 -->
   <script src="scene/main/paddle.js" charset="utf-8"></script>
   <script src="scene/main/ball.js" charset="utf-8"></script>
   <script src="scene/main/block.js" charset="utf-8"></script>
+  <script src="scene/main/player.js" charset="utf-8"></script>
+  <script src="scene/main/bullet.js" charset="utf-8"></script>
+  <script src="scene/main/enemy.js" charset="utf-8"></script>
   <script src="scene/main/scene.js" charset="utf-8"></script>
   <!-- 结束和标题文件 -->
   <script src="scene/end/scene_end.js" charset="utf-8"></script>
@@ -30,11 +36,16 @@
   <body>
     <canvas id="id-canvas" width="400" height="600"></canvas>
     <hr>
-    <input type="range" id="id-input-speed"  value="1">
-    <!-- <div class="">
-      <textarea id="id-text-log" rows="20" cols="50"></textarea>
-    </div> -->
     <div class="">
+      <label >
+        <input class="gua_auto_slider" type="range"
+          data-value="config.fps"
+          min="1"
+          max="60"
+          value="60">
+          游戏帧率：<span class="gua_label">60</span>
+      </label>
+      <br>
       <label >
         <input class="gua_auto_slider" type="range"
           data-value="config.player_speed"

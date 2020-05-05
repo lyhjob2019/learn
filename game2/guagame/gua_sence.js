@@ -26,6 +26,7 @@ class GuaScene {
     }
   }
   update(){
+    window.fps = config.fps
     if (this.debugModelEnable) {
       for (var i = 0; i < this.elements.length; i++) {
         var e = this.elements[i]
