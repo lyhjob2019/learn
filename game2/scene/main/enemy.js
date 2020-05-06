@@ -16,7 +16,4 @@ class Enemy extends GuaImage{
       this.setup()
     }
   }
-  collide() {
-    
-  }
 }

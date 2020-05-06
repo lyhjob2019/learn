@@ -25,3 +25,7 @@ const randomBetween = function(start, end) {
   var n = Math.random() * (end - start + 1)
   return Math.floor(n + start)
 }
+
+const aInb = function(x, x1, x2){
+  return x >= x1 && x <= x2
+}

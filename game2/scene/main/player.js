@@ -34,7 +34,18 @@ class Player extends GuaImage{
       var b = Bullet.new(this.game)
       b.x = x
       b.y = y
+      this.scene.bullets.push(b)
       this.scene.addElement(b)
     }
+  }
+  collide(enemy) {
+    var a = this
+    var b = enemy
+    if (aInb(a.x, b.x, b.x + b.w) ||aInb(b.x, a.x, a.x + a.w)) {
+      if (aInb(a.y, b.y, b.y + b.h) ||aInb(b.y, a.y, a.y + a.h)) {
+        return true
+      }
+    }
+    return false
   }
 }

@@ -7,6 +7,7 @@ class Scene extends GuaScene {
   setup() {
     var game = this.game
     this.numberOfEnemies = 10
+    this.bullets = []
     this.bg = GuaImage.new(game, 'sky')
     this.cloud = GuaImage.new(game, 'cloud')
 
@@ -28,6 +29,14 @@ class Scene extends GuaScene {
   update(){
     super.update()
     // this.cloud.y += 1
+    // this.enemies
+    for (var i = 0; i < this.enemies.length; i++) {
+      var e = this.enemies[i]
+      if (this.player.collide(e)) {
+        // var end =  SceneEnd.new(this.game)
+        // this.game.replaceScene(end)
+      }
+    }
   }
   addEnemies() {
     var es = []
