@@ -5,8 +5,30 @@
 // 永远config就是一个实例
 // 所谓单例就是全局变量
 const config = {
-    fps: 60,
+    fps: 10,
     player_speed: 5,
     bullet_speed:10,
     fire_cooldown:10,
+    alien:{
+      run:{
+        sx: 390,
+        sy: 200,
+        sw: 90,
+        sh: 130,
+        w: 90,
+        h: 130,
+        framecount: 6,
+        displacement: 145,
+      },
+      idle:{
+        sx: 390,
+        sy: 60,
+        sw: 90,
+        sh: 130,
+        w: 90,
+        h: 130,
+        framecount: 4,
+        displacement: 145,
+      }
+    }
 }

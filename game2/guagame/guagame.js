@@ -12,10 +12,10 @@ class GuaGame {
     this.init()
     var self = this
     window.addEventListener('keydown', function (event) {
-      self.keydowns[event.key] = true
+      self.keydowns[event.key] = 'down'
     })
     window.addEventListener('keyup', function (event) {
-      self.keydowns[event.key] = false
+      self.keydowns[event.key] = 'up'
     })
   }
 
@@ -26,7 +26,7 @@ class GuaGame {
   }
 
   drawImage(img){
-    this.context.drawImage(img.texture, img.x, img.y, img.w, img.h)
+    this.context.drawImage(img.texture,img.sx, img.sy, img.sw, img.sh, img.x, img.y, img.w, img.h)
   }
   // 用箭头函数主要是为了用自身的this
   // 不然就要用到self = this来调用自身this
@@ -47,9 +47,13 @@ class GuaGame {
     var actions = Object.keys(g.actions)
     for (var i = 0; i < actions.length; i++) {
       var key = actions[i]
-      if (g.keydowns[key]) {
+      var status = g.keydowns[key]
+      if (status == 'down') {
         // 如果按键被按下，调用注册的action
-        g.actions[key]()
+        g.actions[key]('down')
+      }else if (status == 'up') {
+        g.actions[key]('up')
+        g.keydowns[key] = null
       }
     }
     // update x and y
@@ -87,11 +91,6 @@ class GuaGame {
   textureByName(name) {
     var g = this
     var img = g.images[name]
-    // var image = {
-    //   w:img.width,
-    //   h:img.height,
-    //   img:img,
-    // }
     return img
   }
   runWithScene(scene) {

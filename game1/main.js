@@ -35,7 +35,7 @@ var enableDebug = function(game, enable){
 var _main = function(){
   var images = {
     ball: 'img/ball.png',
-    paddle: 'img/paddle.jpg',
+    paddle: 'img/paddle.png',
     block: 'img/block.png',
     jiangli: 'img/jiangli.jpg',
   }

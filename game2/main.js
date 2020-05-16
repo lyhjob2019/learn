@@ -42,10 +42,12 @@ var _main = function(){
     enemy1: 'img/enemy1.png',
     // enemy2: 'img/enemy2.png',
     fire: 'img/bullet2.png',
+    alien: 'img/alien.jpg',
+    bg: 'img/bg.jpg',
   }
   var game =  GuaGame.instance(config.fps, images,function(g){
-    var s = new Scene(g)
-    // var s = new SceneTitle(g)
+    // var s = new Scene(g)
+    var s = new SceneTitle(g)
     g.runWithScene(s)
   })
 
